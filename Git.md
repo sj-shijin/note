@@ -44,6 +44,8 @@
 
 ## 2.常用命令
 
+[参考视频](https://www.bilibili.com/video/BV1HM411377j)
+
 ### 初始化命令
 
 ```shell
@@ -199,3 +201,58 @@ git push -u <远程仓库名> <本地分支名>:<远程分支名>
 git pull <远程仓库名> <远程分支名>:<本地分支名>
 ```
 
+#### 分支相关命令
+
+```shell
+# 创建分支
+git branch <分支名>
+# 查看分支
+git branch
+# 切换分支
+git switch <分支名> #建议
+git checkout <分支名> #还有恢复的功能，可能会有歧义
+git checkout -b <分支名> <版本id> #创建/恢复分支并切换到创建的分支
+# 合并分支，会默认进行分支暂存区的提交，不会删除分支
+git merge <分支名>
+# 查看分支图
+git log --graph --oneline --decorate --all
+# 删除分支，-d暂存区中没有内容，-D强制删除
+git branch -d <分支名>
+```
+
+#### 解决合并冲突（merge）
+
+在主分支上进行合并，结果：进行merge的分支多了一次提交记录。
+
+```shell
+git merge <分支名>
+# 此时产生合并冲突
+# 查看产生冲突的内容
+git status
+git diff
+# *手动修改*产生冲突的文件
+# 添加暂存并提交
+
+# 终止合并
+git merge --abort
+```
+
+#### 解决合并冲突（rebase）
+
+可以在任意分支进行rebase，结果：进行rebase的分支（截至公共祖先）接到了被rebase的分支后。
+
+![image-20231129232929872](./Git.assets/image-20231129232929872.png)
+
+```shell
+git rebase <分支名>
+```
+
+#### merge和rebase的对比
+
+merge优点：不会破坏原分支的提交历史，方便回溯和查看。
+
+merge缺点：会产生额外的提交节点，分支图比较复杂。
+
+rebase优点：不会产生额外的提交记录，比较整洁。
+
+rebase缺点：改变了提交历史，避免在共享分支中使用。
