@@ -25,6 +25,10 @@ rm
 rmdir
 #新建文件夹
 mkdir
+#递归查找文件，可进行相应的操作
+find <查找目录> -name "文件名" -type 文件类型 --exec 执行命令
+#在文件中查找，
+grep [sth] "文件名"
 ```
 
 #### 输入输出流
@@ -63,3 +67,70 @@ sudo
 sudo su
 exit
 ```
+
+#### 单引号与双引号
+
+```shell
+foo=bar // 声明变量
+echo "value is $foo" // value is bar
+echo 'value is $foo' // value is $foo
+```
+
+#### 符号
+
+```shell
+mcd.sh
+	mcd() {
+		mkdir -p "$1"
+		cd "$1"
+	}
+source mcd.sh
+mcd test //创建了一个test文件夹并进入
+```
+
+- `$0`：正在运行的指令
+- `$1`：第一个参数
+- `$?`：上一条指令的错误代码
+- `$_`：上一个参数
+- `$#`：参数的数量
+- `$$`：进程id
+- `$@`：所有的参数，可以通过for进行调用
+- `!!`：会被替换为上一条指令
+- `{}`：展开，`abc.{jpg,png}`等于`abc.jpg abc.png`
+- `<变量名>=$(指令名)`：在变量中保存输出，注意等号两端不能有空格
+- glob符号详见Git.md
+
+#### 脚本编写
+
+```shell
+#检查脚本是否规范
+shellcheck abc.sh
+```
+
+脚本与函数的区别：
+
+1. 脚本运行在一个新的进程中，函数运行在当前进程中。
+2. 脚本在每次被使用时加载，函数在定义时被加载，
+3. 脚本不一定是shell语言，可以使用python或其他语言。
+
+脚本的第一行称为shebang行，由`#!`开始，后面跟可执行文件的绝对路径，若如shebang行，则默认使用当前shell。
+
+```shell
+#建议使用第一种方法类似于在$PATH中运行可执行文件
+#!/usr/bin/env python
+#!/usr/local/bin/python
+import sys
+for arg in reversed(sys.argv[1:]):
+    print(arg)
+```
+
+```shell
+if [[ $1 = "--help" ]] || [[ $1 = "-h" ]]
+then
+    echo "这是一个测试demo"
+    echo "这个脚本怎么使用，干嘛的，注意点巴拉巴拉"
+    exit 0
+fi
+echo "脚本传入参数$1"
+```
+
