@@ -180,6 +180,7 @@ C\+\+20可以通过定义两个运算符实现原有的六种运算符。
 
 - `as_const`：返回一个常量引用
 - `declval`：返回函数的返回值
+- `decltype`：返回表达式的类型（比如lambda函数）
 - `move`，`forward`：见C\+\+新特性的右值引用部分
 - `move_if_noexcept`：如果类型T的移动构造函数被noexcept修饰符保证过，则返回`T&&`，否则返回`const T&`
 - `forward_like`：可能返回带有const修饰的值，更完美的转发？

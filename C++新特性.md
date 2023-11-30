@@ -135,3 +135,44 @@ struct S3
 2. `S2 a("abc") , S2 b(std::move(a))`：由于常量左值引用可以接受右值，故会进入到显式定义的复制语句中，产生冗余。
 3. `S3 a("abc") , S3 b(std::move(a))`：进入显式定义的移动构造语句中，与1相同。
 
+### 折叠表达式
+
+便于展开可变模板参数包
+
+- 一元右折叠`(E op ...)`：`e[1] op (... op (e[n-1] op e[n]))`
+- 一元左折叠`(... op E)`：`((e[1] op e[2] op ...) op e[n]`
+- 二元右折叠`(E op ... op I)`：`e[1] op (... op (e[n-1] op (e[n] op I))`
+- 二元左折叠`(I op ... op E)`：`(((I op e[1]) op e[2] op ...) op e[n]`
+
+理解：折叠展开的顺序是递归调用顺序。
+
+```c++
+template <typename ... Ts>
+auto sum_right(Ts ... ts) return (ts + ...); //右折叠
+template <typename ... Ts>
+auto sum_left(Ts ... ts) return (... + ts); //左折叠
+template <typename ... Ts>
+auto sum_right2(Ts ... ts) return (ts + ... + 0); //二元右折叠
+template <typename ... Ts>
+auto sum_left2(Ts ... ts) return (0 + ... + ts); //二元左折叠
+
+sum_right(1,2,3); // 1+(2+3)
+sum_left(1,2,3); // (1+2)+3
+sum_right2(1,2,3); // 1+(2+(3+0))
+sum_left2(1,2,3); // ((0+1)+2)+3
+sum_right(); // 报错
+sum_right2(); // 0
+```
+
+可以传入其他参数
+
+```c++
+template <typename R, typename ... Ts>
+auto sum_f(const R& f, Ts ... ts)
+{
+    return (f(ts) + ...);
+}
+auto sq = [](auto x)
+{ return sqrt(x); };
+auto sum = sum_f(sq, 1, 2, 3, 4); //平方根之和
+```
