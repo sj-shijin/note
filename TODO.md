@@ -11,3 +11,5 @@ gdb -x 配置文件
 ### GCC数据竞争检测
 
 gcc –ggdb -fsanitize=thread 
+
+wsl test
