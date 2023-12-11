@@ -16,3 +16,4 @@
 - [ ] [Rust程序设计语言 中文版](https://rustwiki.org/zh-CN/book/)
 - [ ] [Rust语言圣经(Rust Course)](https://course.rs/about-book.html)
 
+- [ ] [Rust Cookbook 中文版](https://rustwiki.org/zh-CN/rust-cookbook/intro.html)
