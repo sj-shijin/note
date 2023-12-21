@@ -264,7 +264,7 @@ C\+\+20可以通过定义两个运算符实现原有的六种运算符。
   std::optional<std::string> create(bool b)
   {
       if (b)
-      	return "Godzilla" ;
+        return "Godzilla" ;
       return {};
   }
   auto create2(bool b)
@@ -495,7 +495,7 @@ cout << duration << endl; //c++20
      // |__42___|
      ```
 
-  3. sign：`+`：显示正数和负数符号，`-`：只显示负数符号，` (space)`：空格代表负数显示负号，整数使用空格。
+  3. sign：`+`：显示正数和负数符号，`-`：只显示负数符号，`(space)`：空格代表负数显示负号，整数使用空格。
 
      ```c++
      int i {42};

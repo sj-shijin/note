@@ -1,17 +1,31 @@
-#### valgrind安装
+### sanitizers
+
+一般内置于编译器中，以下为编译选项：
+
+```shell
+-fsanitize=address #检测地址错误
+-fsanitize=memory #检测内存错误
+-fsanitize=leak #检测内存泄漏
+-fsanitize=thread #检测线程竞争
+-fsanitize=undifined #检测未定义行为
+
+-fno-omit-frame-pointer #保留函数指针，便于回溯
+```
+
+### valgrind
 
 ```shell
 apt install valgrind
 ```
 
-out为编译文件，编译选项有-g
+a.out为编译文件，编译选项有-g
 
 #### memcheck
 
 内存泄漏等内存问题
 
 ```shell
-valgrind --tool=memcheck --log-file=memcheck.log --leak-check=yes  ./out
+valgrind --tool=memcheck --log-file=memcheck.log --leak-check=yes  ./a.out
 ```
 
 #### cachegrind
@@ -19,7 +33,7 @@ valgrind --tool=memcheck --log-file=memcheck.log --leak-check=yes  ./out
 缓存分析器
 
 ```shell
-valgrind --tool=cachegrind ./out
+valgrind --tool=cachegrind ./a.out
 callgrind_annotate cachegrind.out.pid | grep -v “???” > cachegrind.log
 ```
 
@@ -30,7 +44,7 @@ cachegrind.out.pid为cachegrind工具的输出文件，pid替换为真实值。
 函数分析器
 
 ```shell
-valgrind --tool=callgrind ./out
+valgrind --tool=callgrind ./a.out
 #线程分离
 valgrind --tool=callgrind --separate-threads=yes ./out
 callgrind_annotate callgrind.out.pid | grep -v “???” > callgrind.log
@@ -43,7 +57,7 @@ callgrind.out.pid为callgrind工具的输出文件，pid替换为真实值。
 内存分析器
 
 ```shell
-valgrind --tool=massif ./out
+valgrind --tool=massif ./a.out
 ```
 
 可视化查看工具
@@ -60,10 +74,5 @@ massif.out.pid为massif工具的输出文件，pid替换为真实值。
 多线程分析器（暂时未使用）
 
 ```shell
-valgrind --tool=helgrind ./out
+valgrind --tool=helgrind ./a.out
 ```
-
-
-
-
-

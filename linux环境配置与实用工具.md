@@ -38,15 +38,56 @@ then
 fi
 ```
 
+fish中运行conda：在bash中运行：
+
+```bash
+conda init fish
+```
+
 方法二：迁移脚本到`/etc/fish/config.fish`（所有用户）或`~/.config/fish/config.fish`（当前用户）
+
+### Git
+
+```bash
+sudo apt install git
+```
+
+生成rsa密钥：默认目录为`~/.ssh`
+
+```bash
+ssh-keygen -t rsa -C "邮箱"
+```
+
+测试ssh连接：
+
+```bash
+ssh -T "地址"
+```
 
 ### C/C++
 
+1.直接安装构建基础包
+
 ```bash
-sudo apt install gcc
-sudo apt install g++
-sudo apt install gdb
+sudo apt update && sudo apt install build-essential
 ```
+
+2.安装（GNU C/C++）
+
+```bash
+sudo apt install gcc g++
+sudo apt install gdb
+sudo apt install make cmake
+```
+
+3.安装（clang）
+
+```bash
+sudo apt install clang
+sudo apt install lldb
+```
+
+
 
 ### CUDA
 
@@ -81,6 +122,18 @@ custom_channels:
 
 ```bash
 conda clean -i
+```
+
+conda命令(tldr)：
+
+```bash
+conda create --name "虚拟环境名" python=3.11
+conda info --envs
+conda activate "虚拟环境名" /deactivate
+conda remove --name "虚拟环境名" --all
+conda install "包名"
+conda list
+conda clean --all
 ```
 
 ### Rustup/crates.io
@@ -144,7 +197,7 @@ conda clean -i
 ```
 199.232.69.194          github.global.ssl.fastly.net
 140.82.113.3            github.com
-185.199.108.154         github.githubassets.com 
+185.199.108.154         github.githubassets.com
 ```
 
 刷新DNS：
@@ -152,6 +205,3 @@ conda clean -i
 ```bash
 sudo systemctl restart systemd-resolved
 ```
-
-
-
