@@ -35,14 +35,23 @@
 
 **Git**分为远程仓库、本地仓库（暂存区）、工作区
 
-![img](Git.assets/git-command.jpg)
+```mermaid
+graph LR
+    WS[("workspace")];
+    SA[("staging area")];
+    LR[("local repository")];
+    RP[("remote repository")];
+	WS -- "add" --> SA -- "commit" --> LR -- "push" --> RP;
+	RP -- "fetch/clone" --> LR -- "checkout" --> WS;
+	RP -- "pull" --> WS;
+```
 
 - 远程仓库：储存在云端，一般用于与他人共享。
 - 本地仓库：储存在本地的项目文件夹`.git`
   - 暂存区：一般存放在`.git/index`中
   - `HEAD`：命令中的HEAD指向最新版本，以下称为版本库。
   - `HEAD^(HEAD~)`：均表示最新版本的上一个版本，加数字可表示前x个版本，用法等同于版本id。
-- 工作区：通过vscode等软件中打开的文件
+- 工作区：通过vscode等软件中打开的文件。
 
 ## 2.常用命令
 
@@ -246,7 +255,55 @@ git merge --abort
 
 可以在任意分支进行rebase，结果：进行rebase的分支（截至公共祖先）接到了被rebase的分支后。
 
-![image-20231129232929872](./Git.assets/image-20231129232929872.png)
+```mermaid
+gitGraph:
+	commit
+	commit
+	commit
+	branch dev
+	checkout dev
+	commit tag: "dev1" type: HIGHLIGHT
+	commit tag: "dev2" type: HIGHLIGHT
+	checkout main
+	commit
+	commit
+```
+
+```shell
+git switch main
+git rebase dev
+```
+
+
+
+```mermaid
+gitGraph:
+	commit
+	commit
+	commit
+	commit tag: "dev1" type: HIGHLIGHT
+	commit tag: "dev2" type: HIGHLIGHT
+	commit
+	commit
+```
+
+```shell
+git switch dev
+git rebase main
+```
+
+
+
+```mermaid
+gitGraph:
+	commit
+	commit
+	commit
+	commit
+	commit
+	commit tag: "dev1" type: HIGHLIGHT
+	commit tag: "dev2" type: HIGHLIGHT
+```
 
 ```shell
 git rebase <分支名>

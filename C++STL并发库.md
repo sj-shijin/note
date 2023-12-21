@@ -115,28 +115,56 @@ std::lock(ulk1,ulk2);
 
 ## 条件变量（def in `condition_variable`）
 
-条件变量与互斥量一起使用：
+条件变量应与互斥量一起使用：
 
-1. 获取锁
-2. 判断条件，若满足则到5
-3. 阻塞，释放锁
-4. 被唤醒（此时应重新获取锁），返回2
-5. 进行任务
-6. 释放锁
+```mermaid
+stateDiagram-v2
+	A: lock(mutex)
+	AA: lock(mutex)
+	B: pred
+	C: unlock(mutex) & blocking
+	CC: unlock(mutex) & blocking
+	D: notified & lock(mutex)
+	DD: notified & lock(mutex)
+	E: do something
+	EE: do something
+	F: unlock(mutex)
+	FF: unlock(mutex)
+	state wait_with_pred {
+	state if <<choice>>
+        [*] --> A
+        A --> B
+        B --> if
+        if --> C: False
+        C --> D: wait for
+        D --> B
+        if --> E: True
+        E --> F
+        F --> [*]
+	}
+	state wait_without_pred {
+		[*] --> AA
+		AA --> CC
+		CC --> DD :wait for
+		DD --> EE
+		EE --> FF
+		FF --> [*]
+	}
+```
 
 故：使用条件变量的互斥量需要使用unique_lock（可以手动释放）
 
 - condition_variable：只能与unique_lock关联
 - condition_variable_any：与任何锁关联
 
-| 条件变量操作   | 解释                    | 版本  |
-| -------------- | ----------------------- | ----- |
-| wait(lk)       | 阻塞，释放锁（仅第3步） | C++11 |
-| wait(lk, pred) | 内部实现了（2~4步）     |       |
-| wait_for       |                         | C++11 |
-| wait_until     |                         | C++11 |
-| notify_one     | 唤醒一个                | C++11 |
-| notify_all     | 唤醒全部                | C++11 |
+| 条件变量操作   | 解释                 | 版本  |
+| -------------- | -------------------- | ----- |
+| wait(lk)       | 阻塞，释放锁（右图） | C++11 |
+| wait(lk, pred) | 唤醒后再判断（左图） |       |
+| wait_for       |                      | C++11 |
+| wait_until     |                      | C++11 |
+| notify_one     | 唤醒一个             | C++11 |
+| notify_all     | 唤醒全部             | C++11 |
 
 ## 信号量（def in `semaphore`）
 
