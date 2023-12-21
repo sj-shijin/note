@@ -1,4 +1,6 @@
-### Thrust
+# CUDA一些库及功能
+
+## Thrust
 
 Thrust 库提供了许多并行计算所需的算法和数据结构，能够实现以下功能：
 1. 数据结构和容器：  
@@ -28,7 +30,7 @@ Thrust 库提供了许多并行计算所需的算法和数据结构，能够实�
    - 内存分配与管理：使用 CUDA 内存分配器（Memory Allocator）管理 GPU 内存。  
    - 设备与主机之间的数据传输：使用 Copy Policy 进行数据传输。
 
-### Cuda Unified Buffer
+## Cuda Unified Buffer
 
 Cuda Unified Buffer是一个用于高效地管理 GPU 内存的库。CUB 库的主要功能如下：
 1. 内存分配与管理：CUB 提供了方便的内存分配和管理功能，使得开发者可以更加专注于算法实现，而无需关心底层内存操作。CUB 支持两种内存分配方式：动态内存分配（DMA）和直接内存分配（DMAM）。
@@ -38,7 +40,7 @@ Cuda Unified Buffer是一个用于高效地管理 GPU 内存的库。CUB 库的�
 5. 读写锁：CUB 库实现了读写锁功能，可以保护共享数据免受并发访问造成的错误。读写锁可以确保在多个 GPU 设备或线程同时访问共享数据时，数据的完整性得到维护。
 6. 内存池：CUB 提供了内存池功能，可以有效地管理 GPU 内存资源。内存池可以避免频繁的内存分配和释放操作，从而提高程序的性能。
 
-### cuTensor
+## cuTensor
 
  cuTensor 是一个基于 C++ 的 GPU 加速张量计算库，它提供了高性能的 GPU 加速运算功能，专为深度学习和机器学习领域设计。cuTensor 的主要功能如下：
 1. 张量计算：cuTensor 支持多种张量操作，如张量加法、减法、乘法、除法等，并能高效地在 GPU 上执行这些操作。这使得 cuTensor 库在深度学习算法中具有较高的性能。
@@ -50,7 +52,7 @@ Cuda Unified Buffer是一个用于高效地管理 GPU 内存的库。CUB 库的�
 7. 兼容性：cuTensor 支持多种深度学习框架，如 TensorFlow、PyTorch、Caffe 等。这使得 cuTensor 可以轻松地集成到现有的深度学习项目中。
 8. 跨平台支持：cuTensor 支持多种操作系统，如 Windows、Linux 和 macOS。同时，cuTensor 还支持多种 GPU 架构，如 NVIDIA 的 CUDA、AMD 的 OpenCL 等。
 
-### cuBLAS
+## cuBLAS
 
 cuBLAS（CUDA Based Linear Algebra Subroutines）是 NVIDIA 推出的一款 GPU 加速的线性代数库，专为高性能计算和深度学习领域设计。cuBLAS 基于 CUDA 平台，提供了 GPU 加速的矩阵和向量运算功能。cuBLAS 的主要功能如下：
 1. 矩阵乘法：cuBLAS 支持 GPU 加速的矩阵乘法，包括同步和异步计算。这对于深度学习中的卷积层、全连接层等操作具有重要意义。
@@ -64,7 +66,7 @@ cuBLAS（CUDA Based Linear Algebra Subroutines）是 NVIDIA 推出的一款 GPU 
 9. 逻辑运算：cuBLAS 支持 GPU 加速的逻辑运算，如与、或、非等。
 10. 稳定性：cuBLAS 在保持数值稳定性的前提下，提供了高性能的 GPU 加速运算。这对于许多应用于科学计算和工程领域的线性代数问题非常重要。
 
-### Cutlass
+## Cutlass
 
 Cutlass 是一个针对 NVIDIA GPU 的专用线性代数库，旨在为深度学习和其他高性能计算应用提供高性能的矩阵操作。Cutlass 的主要功能如下：
 1. 矩阵乘法：Cutlass 提供了 GPU 加速的矩阵乘法运算，支持同步和异步计算。这对于深度学习中的卷积层、全连接层等操作具有重要意义。
@@ -78,7 +80,7 @@ Cutlass 是一个针对 NVIDIA GPU 的专用线性代数库，旨在为深度学
 9. 逻辑运算：Cutlass 支持 GPU 加速的逻辑运算，如与、或、非等。
 10. 稳定性：Cutlass 在保持数值稳定性的前提下，提供了高性能的 GPU 加速运算。这对于许多应用于科学计算和工程领域的线性代数问题非常重要。
 
-### 区别
+## 区别
 
 在 GPU 上的矩阵乘法功能方面，以上提到的各种库（cuBLAS、CUTLASS、cuTensor）的运行效率有所不同。以下是它们之间的区别：
 1. cuBLAS：cuBLAS 是 NVIDIA 官方推出的 GPU 加速线性代数库，其矩阵乘法功能基于 BLAS（Basic Linear Algebra Subprograms）标准。cuBLAS 提供了高性能的 GPU 加速矩阵乘法，同时也支持同步和异步计算。cuBLAS 在许多深度学习框架中都有广泛应用，如 TensorFlow 和 PyTorch。总体来说，cuBLAS 的矩阵乘法性能非常出色，但可能不如其他库针对特定硬件和算法的优化程度。

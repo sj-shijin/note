@@ -1,4 +1,6 @@
-### sanitizers
+# C++代码分析工具(sanitizers+valgrind)
+
+## sanitizers
 
 一般内置于编译器中，以下为编译选项：
 
@@ -12,7 +14,7 @@
 -fno-omit-frame-pointer #保留函数指针，便于回溯
 ```
 
-### valgrind
+## valgrind
 
 ```shell
 apt install valgrind
@@ -20,7 +22,7 @@ apt install valgrind
 
 a.out为编译文件，编译选项有-g
 
-#### memcheck
+### memcheck
 
 内存泄漏等内存问题
 
@@ -28,7 +30,7 @@ a.out为编译文件，编译选项有-g
 valgrind --tool=memcheck --log-file=memcheck.log --leak-check=yes  ./a.out
 ```
 
-#### cachegrind
+### cachegrind
 
 缓存分析器
 
@@ -39,7 +41,7 @@ callgrind_annotate cachegrind.out.pid | grep -v “???” > cachegrind.log
 
 cachegrind.out.pid为cachegrind工具的输出文件，pid替换为真实值。
 
-#### callgrind
+### callgrind
 
 函数分析器
 
@@ -52,7 +54,7 @@ callgrind_annotate callgrind.out.pid | grep -v “???” > callgrind.log
 
 callgrind.out.pid为callgrind工具的输出文件，pid替换为真实值。
 
-#### massif
+### massif
 
 内存分析器
 
@@ -69,7 +71,7 @@ massif-visualizer massif.out.pid
 
 massif.out.pid为massif工具的输出文件，pid替换为真实值。
 
-#### Helgrind
+### Helgrind
 
 多线程分析器（暂时未使用）
 

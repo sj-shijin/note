@@ -1,8 +1,10 @@
+# LaTeX 基础
+
 编辑器：Texworks
 
 排版工具：XeLaTex
 
-## 1.开始
+# 1.开始
 
 ```latex
 \documentclass{article}
@@ -24,7 +26,7 @@ Hello, world!
 
 以上为中英文混排。
 
-## 2.标题、作者、日期
+# 2.标题、作者、日期
 
 ```latex
 \documentclass[UTF8]{ctexart}
@@ -37,7 +39,7 @@ Hello, world!
 \end{document}
 ```
 
-## 3.章节、段落、目录
+# 3.章节、段落、目录
 
 ```latex
 \documentclass[UTF8]{ctexart}
@@ -65,7 +67,7 @@ is in the center of 天安门广场。
 \end{document}
 ```
 
-## 4.数学公式
+# 4.数学公式
 
 ```latex
 \documentclass{article} % 可改为中英文混排
@@ -80,7 +82,7 @@ E=mc^2.
 \end{document}
 ```
 
-## 5.图片
+# 5.图片
 
 ```latex
 \documentclass{article}
@@ -91,7 +93,7 @@ E=mc^2.
 \end{document}
 ```
 
-## 6.表格
+# 6.表格
 
 ```latex
 \begin{tabular}{|l|c|r|}
@@ -109,7 +111,7 @@ Mac OS & MacTeX & TeXShop \\
 \end{tabular}
 ```
 
-## 7.浮动体（调整图片和表格的位置）
+# 7.浮动体（调整图片和表格的位置）
 
 ```latex
 \begin{figure}[htbp] % 指定理想位置 htbp is here,top,bottom,float page
@@ -120,7 +122,7 @@ Mac OS & MacTeX & TeXShop \\
 \end{figure}
 ```
 
-## 8.版面设置
+# 8.版面设置
 
 - 页边距
 

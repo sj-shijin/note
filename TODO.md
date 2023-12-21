@@ -1,4 +1,6 @@
-### GDB调试（并行调试）
+# TODO
+
+## GDB调试（并行调试）
 
 gdb -x 配置文件
 
@@ -8,7 +10,7 @@ gdb -x 配置文件
 
 并行：scheduler-locking on
 
-### GCC数据竞争检测
+## GCC数据竞争检测
 
 gcc –ggdb -fsanitize=thread 
 

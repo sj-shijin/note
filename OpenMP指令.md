@@ -1,10 +1,12 @@
-### 编译使用
+# OpenMP指令
+
+## 编译使用
 
 ```bash
 g++ ... -fopenmp
 ```
 
-### 是否使用OpenMP
+## 是否使用OpenMP
 
 ```c++
 #if _OPENMP
@@ -14,7 +16,7 @@ g++ ... -fopenmp
 #endif
 ```
 
-### 并行模块
+## 并行模块
 
 ```c++
 #pragma omp parallel num_threads(8)
@@ -28,7 +30,7 @@ g++ ... -fopenmp
 #pragma omp <directive name> <clause>
 ```
 
-### parallel
+## parallel
 
 所有从句都可以连续使用
 
@@ -42,7 +44,7 @@ g++ ... -fopenmp
 # firstprivate(args) //同private，但是从主程序中初始化
 ```
 
-### for/parallel for
+## for/parallel for
 
 对for循环的三个表达式有限制，参考官方手册
 
@@ -74,7 +76,7 @@ g++ ... -fopenmp
 # +,*，&，|，^,&&,||,max,min
 ```
 
-### sections
+## sections
 
 同步构造，每个section分配一个线程
 
@@ -88,7 +90,7 @@ g++ ... -fopenmp
 }
 ```
 
-### 其他
+## 其他
 
 ```c++
 #pragma omp barrier //等待最慢的线程（同步）
@@ -98,6 +100,6 @@ g++ ... -fopenmp
 #pragma omp atomic //原子操作
 ```
 
-### 注意false sharing
+## 注意false sharing
 
 多个线程避免读取同一个缓存行

@@ -1,8 +1,10 @@
-### Utility库介绍
+# C++STL实用库
+
+## Utility库介绍
 
 分为与语言支持和通用库两部分
 
-### 固定宽度整数类型（def in `<cstdint>`）
+## 固定宽度整数类型（def in `<cstdint>`）
 
 `int8_t/int16_t/int32_t/int64_t`：固定位数
 
@@ -16,7 +18,7 @@
 
 无符号整型同理。
 
-### 固定宽度浮点数类型（def in `<stdfloat>`）
+## 固定宽度浮点数类型（def in `<stdfloat>`）
 
 `float16_t`：1s+5e+10p
 
@@ -28,7 +30,7 @@
 
 `bfloat16_t`：1s+8e+7p(for ai)
 
-### 数值界限（def in `<limits>`）
+## 数值界限（def in `<limits>`）
 
 `numeric_limits<T>::max()`
 
@@ -40,7 +42,7 @@
 
 `numeric_limits<T>::signaling_NaN()`：进行运算时会提示。
 
-### 字节（def in `<cstddef>`）
+## 字节（def in `<cstddef>`）
 
 `enum class byte : unsigned char{};`
 
@@ -52,7 +54,7 @@ std::to_integer<int>(b);
 // b可进行所有位运算
 ```
 
-### 智能指针（def in `<memory>`）
+## 智能指针（def in `<memory>`）
 
 | 类型            | 解释                                                   | 版本    |
 | --------------- | ------------------------------------------------------ | ------- |
@@ -112,13 +114,13 @@ share_ptr<T> sp2 = wp1.lock(); //只能通过构造shared_ptr的方式解引用
 wp1.expired() //检验该指针是否合法：即对应的地址是否已经被释放？空指针？
 ```
 
-### 初始化列表（def in `<initializer_list>`）
+## 初始化列表（def in `<initializer_list>`）
 
 `template< class T > class initializer_list;`
 
 其中每个元素均为常量。用法与vector类似。多用于函数参数等。
 
-### 三路比较运算符（def in `<compare>`）
+## 三路比较运算符（def in `<compare>`）
 
 C\+\+20可以通过定义两个运算符实现原有的六种运算符。
 
@@ -126,7 +128,7 @@ C\+\+20可以通过定义两个运算符实现原有的六种运算符。
 
 - `a == b`：相等，返回bool值。当`!=`运算符缺省时，会自动使用`==`结果的逻辑反。
 
-#### 比较的类别
+### 比较的类别
 
 - 偏序关系（partial_ordering）
 
@@ -171,12 +173,12 @@ C\+\+20可以通过定义两个运算符实现原有的六种运算符。
 
 三种序关系条件依次增强，故较强的序关系可以向较弱的序关系隐式转换。
 
-### 交换（def in `<utility>`）
+## 交换（def in `<utility>`）
 
 - `swap`
 - `T exchange(T &obj, U&& new_value)`：new_value转移到obj中，返回会obj的原始值。
 
-### 类型操作（def in `<utility>`）
+## 类型操作（def in `<utility>`）
 
 - `as_const`：返回一个常量引用
 - `declval`：返回函数的返回值
@@ -185,7 +187,7 @@ C\+\+20可以通过定义两个运算符实现原有的六种运算符。
 - `move_if_noexcept`：如果类型T的移动构造函数被noexcept修饰符保证过，则返回`T&&`，否则返回`const T&`
 - `forward_like`：可能返回带有const修饰的值，更完美的转发？
 
-### 整数比较函数（def in `<utility>`）
+## 整数比较函数（def in `<utility>`）
 
 - 不进行隐式类型转换的比较：`cmp_equal`，`cmp_not_equal`，`cmp_less`，`cmp_greater`，`cmp_less_equal`，`cmp_greater_equal`
 
@@ -200,7 +202,7 @@ C\+\+20可以通过定义两个运算符实现原有的六种运算符。
   in_range<size_t>(-1) == false
   ```
 
-### pair（def in `utility`）和tuple（def in `tuple`）
+## pair（def in `utility`）和tuple（def in `tuple`）
 
 - pair
 
@@ -256,7 +258,7 @@ C\+\+20可以通过定义两个运算符实现原有的六种运算符。
   apply(add, pair(1, 2));
   ```
 
-### 汇总类型和类型擦除包装器
+## 汇总类型和类型擦除包装器
 
 - optional（def in `<optional>`）
 
@@ -301,7 +303,7 @@ C\+\+20可以通过定义两个运算符实现原有的六种运算符。
 
 - expected（def in `<expected>`）(C\+\+23)
 
-### Bitset（def in `<bitset>`）
+## Bitset（def in `<bitset>`）
 
 ```c++
 bitset<4> a{12};
@@ -315,9 +317,9 @@ b.to_ullong() == 0b0111ull;
 b.to_string() == "0011";
 ```
 
-### 函数对象
+## 函数对象
 
-#### 函数类
+### 函数类
 
 即重载了括号运算符`()`的类。
 
@@ -334,7 +336,7 @@ FuncObj()(val);
 
 函数可以共享类中的状态。
 
-#### Lambda
+### Lambda
 
 本质上为定义了一个函数类，重载了（）运算符，返回一个实例（函数、函数指针）。
 
@@ -351,7 +353,7 @@ capture作为函数类的私有成员，params作为重载函数的参数，body
 - specs
   - mutable：允许body更改按值捕获的参数和调用non-const成员函数。
 
-#### `function`类（def in `<functional>`）
+### `function`类（def in `<functional>`）
 
 ```c++
 class Test
@@ -407,14 +409,14 @@ cout << f_get_num_(t); //1234
   bdf2(1, 2, 1001); // 调用了f(2,5,111,222);
   ```
 
-#### 运算符函数对象
+### 运算符函数对象
 
 - plus,minus,multiplies,divides,modulus,negate
 - equal_to,not_equal_to,greater,less,greater_equal,less_equal
 - logical_and,logical_or,logical_not
 - bit_and,bit_or,bit_xor,bit_not
 
-### 哈希支持（def in `<functional>`）
+## 哈希支持（def in `<functional>`）
 
 ```c++
 auto std_hasher = hash<strting>{};
@@ -423,7 +425,7 @@ size_t val = std_hasher("123");
 
 注意：整型的std::hash会返回其原来的值，不能以此为基础做多个整型的hash。
 
-### 日期和时间（def in `chrono`）
+## 日期和时间（def in `chrono`）
 
 ```c++
 auto start{chrono::system_clock::now()};
@@ -439,7 +441,7 @@ cout << duration.count() << endl; //c++11
 cout << duration << endl; //c++20
 ```
 
-#### 与CPU时间戳计数器（rdtsc指令）的对比
+### 与CPU时间戳计数器（rdtsc指令）的对比
 
 - 与cpu频率和是否休眠有关（Nehalem架构后解决）
 - 乱序执行：该指令执行时待测量的代码可能已经运行完毕（执行前增加一个内存屏障解决）
@@ -448,12 +450,12 @@ cout << duration << endl; //c++20
 
 **建议使用chrono，会自动选择合适的时钟源。**
 
-### 基本字符串转换（def in `charconv`）
+## 基本字符串转换（def in `charconv`）
 
 - to_char
 - from_char
 
-### 格式化库（def in `format`）
+## 格式化库（def in `format`）
 
 - 参数索引
 
@@ -541,3 +543,4 @@ cout << duration << endl; //c++20
 - format_to和format_to_n：可以将format的结果输出到一个output iterator中
 
 - formatted_size：输出format的结果的zi'fu
+fu

@@ -1,4 +1,6 @@
-### vscode
+# vscode配置与实用插件
+
+## vscode
 
 ```json
 "files.autoSave": "onFocusChange",
@@ -10,7 +12,7 @@
 "workbench.colorTheme": "Default Dark+",
 ```
 
-### LaTeX Workshop
+## LaTeX Workshop
 
 ```json
 "latex-workshop.latex.autoBuild.run": "never",

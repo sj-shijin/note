@@ -1,4 +1,6 @@
-### 线程（def in `<thread>`）
+# C++STL并发库
+
+## 线程（def in `<thread>`）
 
 - thread(c++11)
   - 在析构时自动终止。
@@ -9,9 +11,9 @@
   - 在析构时会自动join。
   - 能够支持线程的中断（接收主线程的中断信息）。
 
-### 原子操作（def in `<atomic>`）
+## 原子操作（def in `<atomic>`）
 
-#### 原子类型
+### 原子类型
 
 - atomic：布尔，整数，浮点数（c++20），指针。
 - atomic_ref：非原子对象的原子操作。
@@ -31,7 +33,7 @@
 | atomic_fetch_xor                                         |                                                              |       |
 | atomic_wait(\*obj, old)                                  | 若\*obj\=\=old，则阻塞直到atomic_notify_one或atomic_notify_all且\*obj!\=old | C++20 |
 
-#### 原子标志类型
+### 原子标志类型
 
 - atomic_flag：是一种原子布尔类型
   - 与`atomic<bool>`的区别：不提供store或load。
@@ -43,25 +45,25 @@
 | atomic_test              | 返回值               | C++20 |
 | atomic_flag_wait         | 阻塞直到被唤醒且更改 | C++20 |
 
-#### 注意事项
+### 注意事项
 
 - 所有操作函数都可以视为对应原子对象的方法。
 - `atomic_xxx_explicit`：所有操作函数都有explicit版本指定内存定序约束（memory_order）。
 
-### 内存同步顺序
+## 内存同步顺序
 
 Todo
 
-### 互斥（def in `<mutex>`）
+## 互斥（def in `<mutex>`）
 
-#### 互斥类型
+### 互斥类型
 
 - mutex
 - timed_mutex：时间限定。
 - recursive_mutex：可以被同一线程递归锁定。
 - recursive_timed_mutex
 
-#### 通用互斥管理
+### 通用互斥管理
 
 | 通用互斥管理类型 | 解释                             | 版本  |
 | ---------------- | -------------------------------- | ----- |
@@ -90,11 +92,11 @@ std::lock(ulk1,ulk2);
 | try_lock     | 尝试对所有锁try_lock，一个失败则释放所有 | C++11 |
 | lock         | 对所有锁lock，失败则阻塞，防死锁         | C++11 |
 
-#### 单次调用
+### 单次调用
 
 - call_once
 
-#### 共享互斥类型（def in `shared_mutex`）
+### 共享互斥类型（def in `shared_mutex`）
 
 - shared_mutex(C++17)
 - shared_timed_mutex(C++14)
@@ -111,7 +113,7 @@ std::lock(ulk1,ulk2);
 
 简而言之：一个写锁，多个读锁。
 
-### 条件变量（def in `condition_variable`）
+## 条件变量（def in `condition_variable`）
 
 条件变量与互斥量一起使用：
 
@@ -136,7 +138,7 @@ std::lock(ulk1,ulk2);
 | notify_one     | 唤醒一个                | C++11 |
 | notify_all     | 唤醒全部                | C++11 |
 
-### 信号量（def in `semaphore`）
+## 信号量（def in `semaphore`）
 
 轻量同步原件，比条件变量更有效率。
 
@@ -151,7 +153,7 @@ std::lock(ulk1,ulk2);
 | try_acquire_for   |                              | C++20 |
 | try_acquire_until |                              | C++20 |
 
-### 锁存器（def in `latch`）与屏障（def in `barrier`）
+## 锁存器（def in `latch`）与屏障（def in `barrier`）
 
 - latch：只能（原子）减少的计数器，只能在创建时初始化值。
 
@@ -171,7 +173,7 @@ std::lock(ulk1,ulk2);
 | arrive_and_wait | 计数器-1并wait     | C++20 |
 | arrive_and_drop | 计数器-1且expect-1 | C++20 |
 
-### Future（def in `Future`）
+## Future（def in `Future`）
 
 Future用于获取异步任务的返回值（或异常）。
 
