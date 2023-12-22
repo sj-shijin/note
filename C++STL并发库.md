@@ -23,7 +23,7 @@
 | atomic_is_lock_free                                      | 检查是否免锁                                                 | C++11 |
 | atomic_store                                             | 将非原子的值赋值给原子对象                                   | C++11 |
 | atomic_load                                              | 获取原子对象的值                                             | C++11 |
-| atomic_exchange                                          | 将非原子的值赋值给原子对象，<br />返回原子对象的旧值。       | C++11 |
+| atomic_exchange                                          | 将非原子的值赋值给原子对象，返回原子对象的旧值。       | C++11 |
 | atomic_compare_exchange_weak(\*obj, \*expected, desired) | 如果\*obj==\*expected，则obj=desired，否则\*expected=*obj    | C++11 |
 | atomic_compare_exchange_strong                           | 相较于weak版本，weak版本可以容忍假性失败（实际相等，判断为不相等），strong版本不会出现这种情况。 | C++11 |
 | atomic_fetch_add                                         | 原子对象+=非原子对象，返回原子对象旧值（下同）               | C++11 |
@@ -119,19 +119,19 @@ std::lock(ulk1,ulk2);
 
 ```mermaid
 stateDiagram-v2
-	A: lock(mutex)
-	AA: lock(mutex)
-	B: pred
-	C: unlock(mutex) & blocking
-	CC: unlock(mutex) & blocking
-	D: notified & lock(mutex)
-	DD: notified & lock(mutex)
-	E: do something
-	EE: do something
-	F: unlock(mutex)
-	FF: unlock(mutex)
-	state wait_with_pred {
-	state if <<choice>>
+  A: lock(mutex)
+  AA: lock(mutex)
+  B: pred
+  C: unlock(mutex) & blocking
+  CC: unlock(mutex) & blocking
+  D: notified & lock(mutex)
+  DD: notified & lock(mutex)
+  E: do something
+  EE: do something
+  F: unlock(mutex)
+  FF: unlock(mutex)
+  state wait_with_pred {
+  state if <<choice>>
         [*] --> A
         A --> B
         B --> if
@@ -141,15 +141,15 @@ stateDiagram-v2
         if --> E: True
         E --> F
         F --> [*]
-	}
-	state wait_without_pred {
-		[*] --> AA
-		AA --> CC
-		CC --> DD :wait for
-		DD --> EE
-		EE --> FF
-		FF --> [*]
-	}
+  }
+  state wait_without_pred {
+    [*] --> AA
+    AA --> CC
+    CC --> DD :wait for
+    DD --> EE
+    EE --> FF
+    FF --> [*]
+  }
 ```
 
 故：使用条件变量的互斥量需要使用unique_lock（可以手动释放）

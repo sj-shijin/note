@@ -88,12 +88,12 @@ sp1.use_count() == 2
 class A
 {
 public:
-	shared_ptr<B> Bp;
+  shared_ptr<B> Bp;
 };
 class B
 {
 public:
-	shared_ptr<A> Ap;
+  shared_ptr<A> Ap;
 };
 
 shared_ptr<A> ptrA = make_shared<A>();

@@ -47,7 +47,7 @@
 
 - std,var的特殊用法
 
-  ```
+  ```matlab
   std(A,W)
   var(A,w)
   std(A,W,dim);std(A,w,vicdim)
@@ -366,4 +366,3 @@
   plot(xq(in),yq(in),'.') % 绘制...
   plot(xq(in&~on),yq(in&~on),'.') % 绘制严格位于内部的点
   ```
-

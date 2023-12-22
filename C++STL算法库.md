@@ -35,7 +35,7 @@ std::ranges::sort(v);
 #include <cstdint>
 
 std::vector<std::uint64_t> v(10000);
-std::sort(std::execution::par, v);			//如函数能使用，将实例作为第一个参数
+std::sort(std::execution::par, v); //如函数能使用，将实例作为第一个参数
 ```
 
 后续介绍算法时会指出能否使用execution。
@@ -236,4 +236,3 @@ std::shuffle(v.begin(),v.end(),sv.begin(),100,g);
 ## 未初始化内存上的操作（def in `<memory>`）
 
 暂不考虑使用
-

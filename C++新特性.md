@@ -39,14 +39,14 @@ class Test
     }
     Test(Test &&t)
     {
-        data = t.data;		//移动
-        t.data = nullptr;	//设为默认值，故右值引用不能为const，且data中的数据不会被释放。
+        data = t.data; //移动
+        t.data = nullptr; //设为默认值，故右值引用不能为const，且data中的数据不会被释放。
     }
     operator Test &operator=(Test &&t)
     {
-        delete[] data;		//释放原先占用的空间
-        data = t.data;		//移动
-        t.data = nullptr;	//设为默认值，故右值引用不能为const，且data中的数据不会被释放。
+        delete[] data; //释放原先占用的空间
+        data = t.data; //移动
+        t.data = nullptr; //设为默认值，故右值引用不能为const，且data中的数据不会被释放。
     }
     ~Test()
     {

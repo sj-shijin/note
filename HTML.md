@@ -11,9 +11,9 @@
     <script src="引入js文件路径" type="text/javascript" charset="uft-8"></script>
 </head>
 <!--
-	body标签
-		bgcolor 背景颜色 
-		text 字体颜色
+    body标签
+        bgcolor 背景颜色 
+        text 字体颜色
 -->
 <body bgcolor="pink" text="blue">
     hello world
@@ -25,15 +25,15 @@
 
 ```html
 <!--
-	标题标签<h1></h1>~<h6></h6> 从大到小
-		不建议使用多个h1标签，h1标签会被搜索引擎获取，可能进入黑名单。
-	水平线标签<hr> 块级元素
-		width 宽度 1.百分比 2.px
-		align 对齐方式 left/right/center(default)
-		size 水平线粗细
-	段落标签<p></p> 块级元素
-		align 对齐方式 left(default)/right/center/justify(两端对齐)
-	换行标签<br>
+    标题标签<h1></h1>~<h6></h6> 从大到小
+        不建议使用多个h1标签，h1标签会被搜索引擎获取，可能进入黑名单。
+    水平线标签<hr> 块级元素
+        width 宽度 1.百分比 2.px
+        align 对齐方式 left/right/center(default)
+        size 水平线粗细
+    段落标签<p></p> 块级元素
+        align 对齐方式 left(default)/right/center/justify(两端对齐)
+    换行标签<br>
 -->
 <body>
     <h1>hello world</h1>
@@ -53,32 +53,32 @@
 
 ```html
 <!--
-	无序列表
-		<ul>
-			<li></li>
-			...
-			<li></li>
-		</ul>
-		type 列表的图标 square(实心方块)/circle(空心圆)/disc(实心圆)(default)
-	无序列表
-		<ol>
-			<li></li>
-			...
-			<li></li>
-		</ol>
-		type 列表的图标 1(数字)(default)/a(小写字母)/A(大写字母)/i(小写罗马字母)/I(大写罗马字母)
+    无序列表
+        <ul>
+            <li></li>
+            ...
+            <li></li>
+        </ul>
+        type 列表的图标 square(实心方块)/circle(空心圆)/disc(实心圆)(default)
+    无序列表
+        <ol>
+            <li></li>
+            ...
+            <li></li>
+        </ol>
+        type 列表的图标 1(数字)(default)/a(小写字母)/A(大写字母)/i(小写罗马字母)/I(大写罗马字母)
 -->
 <body>
     <ul type="square">
-		<li>张三</li>
-		<li>李四</li>
-		<li>王五</li>
-	</ul>
+        <li>张三</li>
+        <li>李四</li>
+        <li>王五</li>
+    </ul>
     <ol type="a">
-		<li>张三</li>
-		<li>李四</li>
-		<li>王五</li>
-	</ol>
+        <li>张三</li>
+        <li>李四</li>
+        <li>王五</li>
+    </ol>
 </body>
 ```
 
@@ -86,11 +86,11 @@
 
 ```html
 <!--
-	div标签<div></div> 块级元素；会自动换行；常用于布局；常配合css一起使用
-		align 对齐方式（div中内容）left(default)/right/center/justify(两端对齐)
-		height 高度
-		line-height 行j=height时内容纵向居中
-	span标签<span></span> 行内元素；不会自动换行；常配合css一起使用
+    div标签<div></div> 块级元素；会自动换行；常用于布局；常配合css一起使用
+        align 对齐方式（div中内容）left(default)/right/center/justify(两端对齐)
+        height 高度
+        line-height 行j=height时内容纵向居中
+    span标签<span></span> 行内元素；不会自动换行；常配合css一起使用
 -->
 <body>
     <div align="center">
@@ -104,30 +104,30 @@
 
 ```html
 <!--
-	字体标签<font></font> 行内元素
-		color 字体颜色
-		size 字体大小（1~7）
-		face 字体风格
-	pre标签<pre></pre> 块级元素 定义预格式化的文本。完全保留文本中的空格、制表、换行符。
-	粗体标签<b></b>或<strong></strong> 行内元素
-	斜体标签<i></i> 行内元素
-	下划线标签<u></u> 行内元素
-	删除线标签<del></del> 行内元素
-	下标<sub></sub> 行内元素
-	上标<sup></sup> 行内元素
+    字体标签<font></font> 行内元素
+        color 字体颜色
+        size 字体大小（1~7）
+        face 字体风格
+    pre标签<pre></pre> 块级元素 定义预格式化的文本。完全保留文本中的空格、制表、换行符。
+    粗体标签<b></b>或<strong></strong> 行内元素
+    斜体标签<i></i> 行内元素
+    下划线标签<u></u> 行内元素
+    删除线标签<del></del> 行内元素
+    下标<sub></sub> 行内元素
+    上标<sup></sup> 行内元素
 -->
 <body>
     <font color="red" size="5" face="楷体">你好</font>
     <pre>
-    hello	world
+    hello world
     helllllo   worrrrrld
     </pre>
     <b>粗体</b><strong>粗体2</strong>
-	<i>斜体</i>
-	<u>下划线</u>
-	<del>删除线</del>
-	<sub>下标</sub>
-	<sup>上标</sup>
+    <i>斜体</i>
+    <u>下划线</u>
+    <del>删除线</del>
+    <sub>下标</sub>
+    <sup>上标</sup>
 </body>
 ```
 
@@ -135,10 +135,10 @@
 
 ```html
 <!--
-	a标签<a></a> 超链接；行内元素
-		href="绝对路径/相对路径/网络路径/锚点(#name/#id)" 必须的属性
-		target 窗口打开方式 _self(当前窗口)(default)/_blank(新建窗口)/_parent(父窗口)
-		name 可作为锚点（其他标签的id属性也可做为锚点）
+    a标签<a></a> 超链接；行内元素
+        href="绝对路径/相对路径/网络路径/锚点(#name/#id)" 必须的属性
+        target 窗口打开方式 _self(当前窗口)(default)/_blank(新建窗口)/_parent(父窗口)
+        name 可作为锚点（其他标签的id属性也可做为锚点）
 -->
 <body>
     <a href="https://www.baidu.com/" target="_blank">在新窗口中打开百度</a>
@@ -153,22 +153,22 @@
 
 ```html
 <!--
-	图片标签<img> 行内元素；标签会在网页中创建一个占位空间并链接图片
-		src 图片的URL 必须的属性
-		alt 图片的代替文本，在图像无法显示时显示的文字
-		title 鼠标悬停时显示的文字
-		width/height 设置图片大小，单个设置时默认等比放缩。 百分比或px
-		border 边框 px
-		align 文本围绕方式
-	视频标签<video></video> 
-		src 视频的URL 必须的属性
-		title 鼠标悬停时显示的文字
-		width/height 设置视频大小，单个设置时默认等比放缩。 百分比或px
-		controls 是否显示控制条
+    图片标签<img> 行内元素；标签会在网页中创建一个占位空间并链接图片
+        src 图片的URL 必须的属性
+        alt 图片的代替文本，在图像无法显示时显示的文字
+        title 鼠标悬停时显示的文字
+        width/height 设置图片大小，单个设置时默认等比放缩。 百分比或px
+        border 边框 px
+        align 文本围绕方式
+    视频标签<video></video> 
+        src 视频的URL 必须的属性
+        title 鼠标悬停时显示的文字
+        width/height 设置视频大小，单个设置时默认等比放缩。 百分比或px
+        controls 是否显示控制条
 -->
 <body>
     <a href="https://www.baidu.com/">
-    	<img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" alt="无法显示" title="百度一下" width="200px" border="2">
+        <img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" alt="无法显示" title="百度一下" width="200px" border="2">
     </a>
     <video src="url" controls>
         不支持video标签时显示。
@@ -180,20 +180,20 @@
 
 ```html
 <!--
-	<table></table> 定义表格 块级元素
-		align 对齐方式 left/center/right
-		border 表格边框的宽度 px
-		width/height 表格的宽度/高度 百分比或px
-	<tr></tr> 定义表格的行 块级元素
-		align 水平对齐方式
-		valign 垂直对齐方式 top/bottom/middle
-		bgcolor b
-	<td></td> 定义表格的标准单元格 行内元素
-		rowspan 纵向合并
-		colspan 横向合并
-	<th></th> 定义表头单元格（内容自动加粗居中）
+    <table></table> 定义表格 块级元素
+        align 对齐方式 left/center/right
+        border 表格边框的宽度 px
+        width/height 表格的宽度/高度 百分比或px
+    <tr></tr> 定义表格的行 块级元素
+        align 水平对齐方式
+        valign 垂直对齐方式 top/bottom/middle
+        bgcolor b
+    <td></td> 定义表格的标准单元格 行内元素
+        rowspan 纵向合并
+        colspan 横向合并
+    <th></th> 定义表头单元格（内容自动加粗居中）
 
-	css样式 border-collapse: collapse; 合并表格边框
+    css样式 border-collapse: collapse; 合并表格边框
 -->
 <body>
     <table border="1" width="500px" align="center" style="border-collapse: collapse;">
@@ -320,6 +320,3 @@
     &lt;&nbsp;&nbsp;&copy;&nbsp;&gt;
 </body>
 ```
-
-
-

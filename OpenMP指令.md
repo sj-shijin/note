@@ -65,11 +65,11 @@ g++ ... -fopenmp
 # ordered //声明后续具有潜在的顺序执行部分，与下一句配合使用
 # pragma omp ordered //for中，在critical的基础上顺序执行
 # schedule(type[,chunk]) //控制调度方式（循环数n，线程数p）
-	# static //每个线程n/p个
-	# dynamic //每个线程1个，动态调度
-	# guided //自定义chunk的dynamic
-	# auto
-	# runtime //由系统环境变量决定
+    # static //每个线程n/p个
+    # dynamic //每个线程1个，动态调度
+    # guided //自定义chunk的dynamic
+    # auto
+    # runtime //由系统环境变量决定
 # reduction(identifier:args) //将args作为私有变量计算，并在最后计算所有结果后返回
 //例
 #reduction(+:tot) //返回所有线程tot结果之和

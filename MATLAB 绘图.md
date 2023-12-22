@@ -193,8 +193,3 @@ plot(X,Y,'b.') %蓝色散点。
   ezmesh('x.^2+y.^2')
   ezsurf('sin(x).*cos(y)')
   ```
-
-  
-
-
-

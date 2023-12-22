@@ -12,6 +12,12 @@
 "workbench.colorTheme": "Default Dark+",
 ```
 
+## Markdown
+
+### Mermaid
+
+### Marp
+
 ## LaTeX Workshop
 
 ```json
@@ -130,4 +136,3 @@
 "latex-workshop.latex.recipe.default": "lastUsed",
 "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
 ```
-

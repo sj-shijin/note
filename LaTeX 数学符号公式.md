@@ -38,8 +38,6 @@ $$
 \varepsilon, \vartheta, \varpi, \varrho, \varsigma, \varphi
 $$
 
-
-
 ## 2.上标、下标
 
 $$
@@ -150,8 +148,6 @@ $$
 \bigodot, \bigotimes, \bigoplus
 $$
 
-
-
 ## 13.关系符号
 
 $$
@@ -247,7 +243,7 @@ $$
 
 $$
 f(n) =
-\begin{cases} 
+\begin{cases}
 n/2,  & \text{if $n$ is even} \\
 3n+1, & \text{if $n$ is odd}
 \end{cases}
@@ -295,4 +291,3 @@ $$
 \left \lfloor \frac{a}{b} \right \rfloor,
 \left\{ \frac{a}{b} \right.
 $$
-

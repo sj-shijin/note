@@ -9,9 +9,3 @@ gdb -x 配置文件
 基本命令，cheatsheet
 
 并行：scheduler-locking on
-
-## GCC数据竞争检测
-
-gcc –ggdb -fsanitize=thread 
-
-wsl test

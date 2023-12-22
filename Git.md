@@ -10,7 +10,7 @@
 
 2. 添加内容（内容会改变）
 
-   ```
+   ```txt
    140.82.113.3 github.com
    199.232.69.194 github.global.ssl.fastly.net
    185.199.108.153 assets-cdn.github.com
@@ -41,9 +41,9 @@ graph LR
     SA[("staging area")];
     LR[("local repository")];
     RP[("remote repository")];
-	WS -- "add" --> SA -- "commit" --> LR -- "push" --> RP;
-	RP -- "fetch/clone" --> LR -- "checkout" --> WS;
-	RP -- "pull" --> WS;
+    WS -- "add" --> SA -- "commit" --> LR -- "push" --> RP;
+    RP -- "fetch/clone" --> LR -- "checkout" --> WS;
+    RP -- "pull" --> WS;
 ```
 
 - 远程仓库：储存在云端，一般用于与他人共享。
@@ -179,7 +179,7 @@ ssh-keygen -t rsa -b 4096
 ```shell
 #~/.ssh/config
 Host github
-	HostName github.com #ip或地址
+    HostName github.com #ip或地址
     PreferredAuthentications publickey
     IdentityFile ~/.ssh/id_rsa # 认证文件 私钥地址
 ```
@@ -257,16 +257,16 @@ git merge --abort
 
 ```mermaid
 gitGraph:
-	commit
-	commit
-	commit
-	branch dev
-	checkout dev
-	commit tag: "dev1" type: HIGHLIGHT
-	commit tag: "dev2" type: HIGHLIGHT
-	checkout main
-	commit
-	commit
+    commit
+    commit
+    commit
+    branch dev
+    checkout dev
+    commit tag: "dev1" type: HIGHLIGHT
+    commit tag: "dev2" type: HIGHLIGHT
+    checkout main
+    commit
+    commit
 ```
 
 ```shell
@@ -274,17 +274,15 @@ git switch main
 git rebase dev
 ```
 
-
-
 ```mermaid
 gitGraph:
-	commit
-	commit
-	commit
-	commit tag: "dev1" type: HIGHLIGHT
-	commit tag: "dev2" type: HIGHLIGHT
-	commit
-	commit
+    commit
+    commit
+    commit
+    commit tag: "dev1" type: HIGHLIGHT
+    commit tag: "dev2" type: HIGHLIGHT
+    commit
+    commit
 ```
 
 ```shell
@@ -292,17 +290,15 @@ git switch dev
 git rebase main
 ```
 
-
-
 ```mermaid
 gitGraph:
-	commit
-	commit
-	commit
-	commit
-	commit
-	commit tag: "dev1" type: HIGHLIGHT
-	commit tag: "dev2" type: HIGHLIGHT
+    commit
+    commit
+    commit
+    commit
+    commit
+    commit tag: "dev1" type: HIGHLIGHT
+    commit tag: "dev2" type: HIGHLIGHT
 ```
 
 ```shell

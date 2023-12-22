@@ -2,7 +2,7 @@
 
 [MIT计算机教育中缺失的一棵](https://missing-semester-cn.github.io/)
 
-### 基本shell指令
+## 基本shell指令
 
 ```shell
 #***多用--help***
@@ -33,7 +33,7 @@ find <查找目录> -name "文件名" -type 文件类型 --exec 执行命令
 grep [sth] "文件名"
 ```
 
-### 输入输出流
+## 输入输出流
 
 `<`：改变输入流
 
@@ -60,7 +60,7 @@ tee
 
 可以使用管道操作将sudo作用于可以写入的命令以修改被保护的文件。
 
-### root权限
+## root权限
 
 ```shell
 #一般可以使用sudo临时使用root权限
@@ -70,7 +70,7 @@ sudo su
 exit
 ```
 
-### 单引号与双引号
+## 单引号与双引号
 
 ```shell
 foo=bar // 声明变量
@@ -78,14 +78,14 @@ echo "value is $foo" // value is bar
 echo 'value is $foo' // value is $foo
 ```
 
-### 符号
+## 符号
 
 ```shell
 mcd.sh
-	mcd() {
-		mkdir -p "$1"
-		cd "$1"
-	}
+    mcd() {
+        mkdir -p "$1"
+        cd "$1"
+    }
 source mcd.sh
 mcd test //创建了一个test文件夹并进入
 ```
@@ -102,7 +102,7 @@ mcd test //创建了一个test文件夹并进入
 - `<变量名>=$(指令名)`：在变量中保存输出，注意等号两端不能有空格
 - glob符号详见Git.md
 
-### 脚本编写
+## 脚本编写
 
 ```shell
 #检查脚本是否规范
@@ -135,4 +135,3 @@ then
 fi
 echo "脚本传入参数$1"
 ```
-

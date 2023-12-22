@@ -39,11 +39,11 @@
 
   ```matlab
   function return1=functionname(parm1,parm2)
-  	return1=value1;
+    return1=value1;
   end
   function [return1,return2]=functionname(parm1,parm2)
-  	return1=value1;
-  	return2=value2;
+    return1=value1;
+    return2=value2;
   end
   ```
 
@@ -136,6 +136,3 @@ end
 | rref           | 化为行最简型     |
 | eig            | 特征值、特征向量 |
 | ploy           | 特征多项式       |
-
-
-

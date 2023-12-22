@@ -24,8 +24,8 @@
 "use strict"; //添加在脚本或函数的第一行
 
 //Number数字
-    var f = 3.14;	//全局变量（在函数内定义的为局部变量），
-    let i = 1001;	//局部，块级变量
+    var f = 3.14; //全局变量（在函数内定义的为局部变量），
+    let i = 1001; //局部，块级变量
     const s = 123e5;//常量
 //String字符串
     var s1 = 'str';
@@ -95,7 +95,7 @@
 //Object对象
     var o = {
         name:'sj',
-        'name':'shijin', 	//与上一项key视为相同，会覆盖上一个的值
+        'name':'shijin', //与上一项key视为相同，会覆盖上一个的值
         age:19
         f : function (x,y) {
             return x + y;
@@ -179,38 +179,38 @@ document.cookie
 var x = document.getElementById("id001"); //通过id查找，返回节点
 var y = x.getElementsByTagName("p"); //通过标签名查找（p标签），返回HTMLCollection
 var z = document.getElementsByClassName('class1'); //通过类名查找，返回HTMLCollection
-	//document代表整个页面的根节点
+    //document代表整个页面的根节点
 //修改节点
-	//修改标签内容
-	x.innerText = "文本内容";
-	x.innerHTML = "HTML内容";
-	//修改标签属性
-	x.className = "newclassname";
-	x.setAttribute('class','newclassname');
-	//修改标签的css-style
-	x.style.color = "red";
+    //修改标签内容
+    x.innerText = "文本内容";
+    x.innerHTML = "HTML内容";
+    //修改标签属性
+    x.className = "newclassname";
+    x.setAttribute('class','newclassname');
+    //修改标签的css-style
+    x.style.color = "red";
 //新增节点
-	//移动已存在的节点
-	father.appendChild(x); //将查找到的x节点移动到father节点的最后
-	//新建节点
-	var nx = document.createElement('p'); //创建p标签
-	nx.id = 'p1';
-	nx.innerText = 'Hello'; //设置属性和内容
-	father.appendChild(nx); //将新节点nx新增到father节点的最后
-	father.insertBefore(nx,childx) //将新节点nx插入到father节点的子节点childx前
-	father.replaceChild(nx,childx) //替换
+    //移动已存在的节点
+    father.appendChild(x); //将查找到的x节点移动到father节点的最后
+    //新建节点
+    var nx = document.createElement('p'); //创建p标签
+    nx.id = 'p1';
+    nx.innerText = 'Hello'; //设置属性和内容
+    father.appendChild(nx); //将新节点nx新增到father节点的最后
+    father.insertBefore(nx,childx) //将新节点nx插入到father节点的子节点childx前
+    father.replaceChild(nx,childx) //替换
 //删除节点（找到父节点，调用父节点的方法删除该节点）
-	xfather = x.parentElement;
-	x.parentElement.removeChild(x);
-	xfather.children //删除节点时会实时更新子节点
+    xfather = x.parentElement;
+    x.parentElement.removeChild(x);
+    xfather.children //删除节点时会实时更新子节点
 ```
 
 ```javascript
 //获得和设置表单的值，假设x为一个input节点
-	x.value
-	x.value = '123' //type = 'text'
-	x.checked
-	x.checked = true //type = 'radio'
+    x.value
+    x.value = '123' //type = 'text'
+    x.checked
+    x.checked = true //type = 'radio'
 ```
 
 ```html
@@ -250,8 +250,6 @@ history.forward()
 ## 7.JQuery
 
 JQuery库中包含大量JS函数，简化语法。
-
-JQuery3.6.0本地地址：JavaScript.data\jquery.js
 
 [jQuery API 中文在线手册](http://jquery.cuishifeng.cn)
 
@@ -298,4 +296,3 @@ $('#id').mousemove(function(e){
 })
 //可查阅中文在线手册
 ```
-

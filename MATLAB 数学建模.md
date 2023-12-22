@@ -10,7 +10,6 @@ x=linprog(c,A,b,Aeq,beq,lb,ub)
 intlinprog %整数线性规划
 ```
 
-
 线性规划模型：
 
 目标函数：$min\,f=c'\times x=c_1x_1+c_2x_2+...+c_nx_n$
@@ -42,4 +41,3 @@ $$
    \end{aligned}
 $$
    返回值：$x=[x_1,x_2,...,x_n],fval=c'\times x$
-

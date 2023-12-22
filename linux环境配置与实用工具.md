@@ -8,7 +8,7 @@
 
 备份并修改`/etc/apt/sources.list`
 
-```
+```txt
 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
 # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
@@ -89,8 +89,6 @@ sudo apt install clang
 sudo apt install lldb
 ```
 
-
-
 ### CUDA
 
 [官方安装指南](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
@@ -101,7 +99,7 @@ sudo apt install lldb
 
 下载并安装miniconda后，在`~/.condarc`中修改：
 
-```
+```txt
 channels:
   - defaults
 show_channel_urls: true
@@ -159,7 +157,7 @@ conda clean --all
 
 3. 设置crates.io镜像， 修改配置文件`~/.cargo/config`
 
-   ```
+   ```txt
    [source.crates-io]
    replace-with = 'rsproxy-sparse'
    [source.rsproxy]
@@ -196,7 +194,7 @@ conda clean --all
 
 在`/etc/hosts`中添加：注意ip地址会变，通过解析域名的网站获取。
 
-```
+```txt
 199.232.69.194          github.global.ssl.fastly.net
 140.82.113.3            github.com
 185.199.108.154         github.githubassets.com
