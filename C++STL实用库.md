@@ -336,6 +336,30 @@ FuncObj()(val);
 
 函数可以共享类中的状态。
 
+```c++
+class SumMe
+{
+    int sum{0};
+ public:
+    SumMe() = default;
+    void operator()(int x) {
+        sum += x;
+    }
+    int getSum() const {
+        return sum;
+    }
+}
+
+int main()
+{
+    vector<int> intVec{0, 1, 2, 3, 4, 5};
+    SumMe sumMe = for_each(inVec.begin(), intVec.end(), SumMe());
+    cout << sumMe.getSum();
+}
+```
+
+可以将函数调用的结果储存在函数对象中。
+
 ### Lambda
 
 本质上为定义了一个函数类，重载了（）运算符，返回一个实例（函数、函数指针）。
