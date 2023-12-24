@@ -1,10 +1,10 @@
 # LaTeX 基础
 
-编辑器：Texworks
+编辑器：VSCode/Texworks
 
-排版工具：XeLaTex
+排版工具：Texlive
 
-## 1.开始
+## 开始
 
 ```latex
 \documentclass{article}
@@ -26,7 +26,7 @@ Hello, world!
 
 以上为中英文混排。
 
-## 2.标题、作者、日期
+## 标题、作者、日期
 
 ```latex
 \documentclass[UTF8]{ctexart}
@@ -39,7 +39,7 @@ Hello, world!
 \end{document}
 ```
 
-## 3.章节、段落、目录
+## 章节、段落、目录
 
 ```latex
 \documentclass[UTF8]{ctexart}
@@ -50,6 +50,7 @@ Hello, world!
 \maketitle
 \tableofcontents % 在标题、作者、日期后插入目录***生成正确的目录一般需要运行两次***
 \newpage % 换页
+%\chapter{} 一般用于书籍
 \section{你好中国}
 中国在 East Asia.\\ % 换行，不加则视为连续文本，或\newline
 中国有34个省级行政区。
@@ -67,10 +68,11 @@ is in the center of 天安门广场。
 \end{document}
 ```
 
-## 4.数学公式
+## 数学公式
+
+具体见[LaTeX 数学符号公式](LaTeX 数学符号公式.md)
 
 ```latex
-\documentclass{article} % 可改为中英文混排
 \usepackage{amsmath} % 加载支持数学环境的宏包
 \begin{document}
 Einstein 's $E=mc^2$. % 行内公式
@@ -82,10 +84,20 @@ E=mc^2.
 \end{document}
 ```
 
-## 5.图片
+公式引用：
 
 ```latex
-\documentclass{article}
+\usepackage{hyperref}
+\begin{equation} \label{eq1}
+E=mc^2.
+\end{equation} % 带有编号的行间公式
+
+\autoref{eq1}
+```
+
+## 图片
+
+```latex
 \usepackage{graphicx} % 加载宏包
 \begin{document}
 \includegraphics{a.jpg}
@@ -93,7 +105,7 @@ E=mc^2.
 \end{document}
 ```
 
-## 6.表格
+## 表格
 
 ```latex
 \begin{tabular}{|l|c|r|}
@@ -111,18 +123,59 @@ Mac OS & MacTeX & TeXShop \\
 \end{tabular}
 ```
 
-## 7.浮动体（调整图片和表格的位置）
+## 浮动体（调整图片和表格的位置）
 
 ```latex
+\usepackage{graphicx} % 加载宏包
 \begin{figure}[htbp] % 指定理想位置 htbp is here,top,bottom,float page
 \centering % 居中
-\includegraphics{a.jpg}
+\includegraphics[width = 12cm]{a.jpg}
 \caption{有图有真相} % 设置标题，会自动给加上编号
 \label{pic1} % 设置标记，使用\ref{pic1}引用编号
 \end{figure}
+
+\begin{figure*} %跨栏图片
+...
+\end{figure*}
 ```
 
-## 8.版面设置
+## 参考文献
+
+```latex
+\begin{thebibliography} {99} % 99代表引用的上限
+\bibitem{lable1} Jin Shi...
+\end{thebibliography}
+```
+
+引用：`\cite{lable1}`，lable1与文献标签对应。
+
+## 参考文献（BibTeX）
+
+`.tex`文件：
+
+```latex
+\bibliographystyle{unsrt}
+
+\bibliography{xxx} % 与bib文件名对应
+```
+
+`xxx.bib`文件：
+
+```latex
+@article{vaswani2017attention,
+  title={Attention is all you need},
+  author={Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, {\L}ukasz and Polosukhin, Illia},
+  journal={Advances in neural information processing systems},
+  volume={30},
+  year={2017}
+}
+```
+
+引用：`\cite{vaswani2017attention}`，与bib文件标签（第一个参数）对应
+
+编译：使用带有BibTeX的编译链。
+
+## 版面设置
 
 - 页边距
 
@@ -169,3 +222,12 @@ Mac OS & MacTeX & TeXShop \\
   \addtolength{\parskip}{.4em} %在原有的基础上增加段间距（负值减小）
   %导言区
   ```
+  
+- 参考文献右上角引用
+
+  ```latex
+  \newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
+  \upcite{}
+  ```
+
+  

@@ -9,3 +9,12 @@ gdb -x 配置文件
 基本命令，cheatsheet
 
 并行：scheduler-locking on
+
+## 可视化性能分析
+
+cpu：perf+flamegraph，gperf，gperf2dot，KCachegrind、QCachegrind
+
+https://github.com/brendangregg/FlameGraph
+
+gpu：nsight system
+
