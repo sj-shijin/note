@@ -1,6 +1,6 @@
 # vscode配置与实用插件
 
-## vscode
+## Vscode设置
 
 ```json
 "files.autoSave": "onFocusChange",
@@ -11,6 +11,10 @@
 "editor.formatOnSave": true,
 "workbench.colorTheme": "Default Dark+",
 ```
+
+## C/C++
+
+### Clangd
 
 ## Markdown
 
