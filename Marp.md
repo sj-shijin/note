@@ -1,7 +1,6 @@
 ---
 marp: true
-# theme: uncover
-# theme: gaia
+theme: yoimiya
 size: 16:9
 header: 'Marp'
 footer: '2024.01.03'
