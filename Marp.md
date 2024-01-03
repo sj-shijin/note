@@ -2,7 +2,7 @@
 marp: true
 # theme: uncover
 # theme: gaia
-class: lead
+size: 16:9
 header: 'Marp'
 footer: '2024.01.03'
 paginate: true
