@@ -1,7 +1,15 @@
 ---
 marp: true
+# theme: uncover
+# theme: gaia
+class: lead
+header: 'Marp'
+footer: '2024.01.03'
+paginate: true
+_paginate: false #局部命令
+# headingDivider: 2 #以二级标题分割
 ---
-
+<!-- header: 基本用法 -->
 # Marp基本用法
 
 Marp是一个基于Markdown的演示文稿工具，它可以让你使用简单的文本语法创建漂亮的幻灯片。
@@ -20,6 +28,8 @@ Marp是一个基于Markdown的演示文稿工具，它可以让你使用简单�
 
 2. 安装完成后，你就可以使用Marp来创建演示文稿了。
 
+或是使用vscode插件。
+
 ---
 
 ## 创建幻灯片
@@ -29,18 +39,6 @@ Marp是一个基于Markdown的演示文稿工具，它可以让你使用简单�
 1. 创建一个新的Markdown文件。
 
 2. 在文件中使用Markdown语法编写内容，每个幻灯片使用三个短横线（`---`）分隔。
-
-    ```markdown
-    # 第一张幻灯片
-
-    这是第一张幻灯片的内容。
-
-    ---
-
-    # 第二张幻灯片
-
-    这是第二张幻灯片的内容。
-    ```
 
 3. 保存文件，并使用Marp将其转换为幻灯片。
 
