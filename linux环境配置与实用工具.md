@@ -99,7 +99,7 @@ sudo apt install lldb
 
 下载并安装miniconda后，在`~/.condarc`中修改：
 
-```txt
+```text
 channels:
   - defaults
 show_channel_urls: true
@@ -157,7 +157,7 @@ conda clean --all
 
 3. 设置crates.io镜像， 修改配置文件`~/.cargo/config`
 
-   ```txt
+   ```text
    [source.crates-io]
    replace-with = 'rsproxy-sparse'
    [source.rsproxy]
@@ -172,29 +172,29 @@ conda clean --all
 
 ### 实用工具
 
-1. 文本编辑器（gedit，vim）
+- 文本编辑器（gedit，vim）
 
-2. 文件管理器（nautilus）
+- 文件管理器（nautilus）
 
-3. **非常好用**：命令速查Too Long Didn't Read（tldr）
+- **非常好用**：命令速查Too Long Didn't Read（tldr）
 
-   第一次运行时更新数据库（需要连接到github）
+  第一次运行时更新数据库（需要连接到github）
 
-   ```bash
-   tldr --update
-   ```
+  ```bash
+  tldr --update
+  ```
 
-4. 系统监控（htop，btop）
+- 系统监控（htop，btop）
 
-5. 视频音频转换（ffmpeg）
+- 视频音频转换（ffmpeg）
 
-6. 图像转换（imagemagick）
+- 图像转换（imagemagick）
 
 ### 临时访问github（修改hosts）
 
 在`/etc/hosts`中添加：注意ip地址会变，通过解析域名的网站获取。
 
-```txt
+```text
 199.232.69.194          github.global.ssl.fastly.net
 140.82.113.3            github.com
 185.199.108.154         github.githubassets.com
@@ -205,3 +205,43 @@ conda clean --all
 ```bash
 sudo systemctl restart systemd-resolved
 ```
+
+### WSL2中通过Clash for Windows设置代理
+
+- Clash for Windows客户端设置
+
+  - 修改端口号（默认为7890），以16514为例
+  - 打开Allow LAN
+
+- 修改`~/.bashrc`
+
+  ```bash
+  host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
+  export http_proxy="http://$host_ip:[端口]"
+  export https_proxy="http://$host_ip:[端口]"
+  ```
+
+- 使用root用户保留之前设置的环境变量
+
+  运行`sudo visudo`
+
+  - Ubuntu20.04
+
+    加入该行
+
+    ```text
+    Defaults env_keep="http_proxy https_proxy"
+    ```
+
+  - Ubuntu22.04
+
+    取消该行注释
+
+    ```text
+    Defaults:%sudo env_keep += "http_proxy https_proxy ftp_proxy all_proxy no_proxy"
+    ```
+
+- 测试
+
+  - 输入`source ~/.bashrc`，通过`echo $http_proxy`检查端口号
+  - 输入`wget www.google.com`检查连接。
