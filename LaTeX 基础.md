@@ -76,7 +76,10 @@ is in the center of 天安门广场。
 \usepackage{amsmath} % 加载支持数学环境的宏包
 \begin{document}
 Einstein 's $E=mc^2$. % 行内公式
-$$ E=mc^2. $$ % 行间公式
+
+$$ E=mc^2. $$
+
+ % 行间公式
 \[E=mc^2. \] % 行间公式
 \begin{equation}
 E=mc^2.

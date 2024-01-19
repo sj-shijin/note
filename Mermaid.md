@@ -256,7 +256,6 @@ quadrantChart
     docRef: github.com/all_the_tests
     }
 
-
     test_entity - satisfies -> test_req2
     test_req - traces -> test_req2
     test_req - contains -> test_req3

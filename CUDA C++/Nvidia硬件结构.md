@@ -19,5 +19,3 @@
 
 ## 第四代Tensor core
 
-
-

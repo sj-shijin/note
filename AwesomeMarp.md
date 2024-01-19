@@ -60,7 +60,6 @@ Awesome-Marp 地址：[GitHub 库](https://github.com/favourhong/Awesome-Marp)/[
 
 ## 1. 关于模板
 
-
 - Awesome Marp 支持 30 个自定义样式，使用时需在页面指定（如 `<!-- _class: trans -->`）：
 
 | 封面页       | 目录页     | 列表          | 引用盒子      | 其他 1        |其他 2|
@@ -72,16 +71,13 @@ Awesome-Marp 地址：[GitHub 库](https://github.com/favourhong/Awesome-Marp)/[
 | `cover_e` |         | `cols-2-46` | `bq-green`  | 标题固定+有底色 `fixedtitleB`  ||
 |||`cols-2-37`||||
 
-
 ## 1. 关于模板
-
 
 - Awesome Marp 的主题色（6 种），可在 YAML 区切换 Theme，如 `theme: am_dark`：
 
 | 深色      | 绿色       | 红色     | 蓝色      | 棕色       | 紫色
 |---------|----------|--------|---------|----------|----|
 | `am_dark` | `am_green` | `am_red` | `am_blue` | `am_brown` |`am_purple`|
-
 
 ## 1. 关于模板
 
@@ -181,7 +177,6 @@ Awesome-Marp 地址：[GitHub 库](https://github.com/favourhong/Awesome-Marp)/[
 <!-- _footer: ![](https://mytuchuang-1303248785.cos.ap-beijing.myqcloud.com/picgo/202309231557236.png) -->
 <!-- _header: ![](https://mytuchuang-1303248785.cos.ap-beijing.myqcloud.com/picgo/202309231558983.png) -->
 
-
 # <!-- fit -->Awesome Marp：一套自定义 Marp 主题
 
 ###### “用法简单且功能全面的个性化 PPT 模板”
@@ -244,7 +239,6 @@ Awesome-Marp 地址：[GitHub 库](https://github.com/favourhong/Awesome-Marp)/[
 - [需要知道的基础知识](#49)
 - [最后一页](#51)
 
-
 ## 4. 页面分栏与列表分列
 
 <!-- _class: trans -->
@@ -262,7 +256,6 @@ Awesome-Marp 地址：[GitHub 库](https://github.com/favourhong/Awesome-Marp)/[
   - `cols-3`：[三列分栏，平分](#28)
 
 - 如果某一栏为图片，可以将 `class=ldiv` 换成 `class=limg`，这样能够实现图片的垂直居中对齐呢（`class=ldiv` 为居上对齐）
-
 
 ## 4.1 页面分栏与列表分列：页面分栏
 
@@ -284,7 +277,6 @@ Awesome-Marp 地址：[GitHub 库](https://github.com/favourhong/Awesome-Marp)/[
 ```
 
 - 如果是分三栏（`<!-- _class: cols-3 -->`），还需要再增加 `<div class="mdiv"></div>` 标签
-
 
 ## 《荷塘月色》（两栏五五分）
 
@@ -365,7 +357,6 @@ Awesome-Marp 地址：[GitHub 库](https://github.com/favourhong/Awesome-Marp)/[
 
 <div class=ldiv>
 
-
 盼望着，盼望着，东风来了，春天的脚步近了。
 
 一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。
@@ -387,7 +378,6 @@ Awesome-Marp 地址：[GitHub 库](https://github.com/favourhong/Awesome-Marp)/[
 <!-- _class: cols-2-37 -->
 
 <div class=ldiv>
-
 
 经典的散文诗篇有：
 
@@ -443,7 +433,6 @@ Awesome Marp v1.1 提供了 4 种列表分列的方式，分别为：
 - `cols2_ul_sq`：呈现效果为[无序列表 + 方形序号](#31)
 - `cols2_ul_ci`：呈现效果为[无序列表 + 圆形序号](#32)
 
-
 ## 《微观经济学：现代观点》
 
 <!-- _class: cols2_ol_sq fglass -->
@@ -465,7 +454,6 @@ Awesome Marp v1.1 提供了 4 种列表分列的方式，分别为：
 - 不确定性、期望效用和不对称信息
 
 [返回](#28)
-
 
 ## 《微观经济学：现代观点》
 
@@ -612,7 +600,6 @@ Awesome Marp v1.1 提供了 4 种列表分列的方式，分别为：
 
 [返回](#34)
 
-
 ## 6. 导航栏
 
 <!-- _class: trans -->
@@ -632,7 +619,6 @@ Awesome Marp v1.1 提供了 4 种列表分列的方式，分别为：
 - 其余非活动标题，使用斜体 `*斜体*`
 - 如果左侧有文字，需要使用斜粗体 `***粗斜体***`
 - 默认根据内容自动分配间距，如果希望右对齐，可以手动增加空格的方式来推动右对齐 
-
 
 ## 6. 导航栏
 
@@ -669,11 +655,9 @@ Awesome Marp v1.1 提供了 4 种列表分列的方式，分别为：
   
   - 同时，页面内容也会从顶部起笔，而非垂直方向上居中显示
 
-
 ## 7. 固定标题行：更像 Beamer 了
 
 <!-- _class: fixedtitleB -->
-
 
 <div class="div">
 
@@ -731,14 +715,11 @@ Awesome Marp v1.1 提供了 4 种列表分列的方式，分别为：
 
 比如，本页面采用的自定义样式为 `largetext` 
 
-
-
 ## 需要知道的基础知识……
 
 <!-- _class: trans -->
 <!-- _footer: "" -->
 <!-- _paginate: "" -->
-
 
 ## Markdown 概览
 
@@ -786,7 +767,6 @@ Awesome Marp v1.1 提供了 4 种列表分列的方式，分别为：
 
 </div>
 
-
 ## Marp 基本用法
 
 <!-- _header: \ ***@Awesome Marp*** *关于模板* *封面页* *目录页* *分栏与分列* *引用盒子* *导航栏* **基础知识**-->
@@ -798,7 +778,6 @@ Awesome Marp v1.1 提供了 4 种列表分列的方式，分别为：
 - 在 Markdown 文件的顶部 YAML 区域，通过 `marp: true` 启动 Marp，然后即可开启侧边预览，VS Code 界面左边是代码区域，右边为预览区域
 - 内容遵循 Markdown 语法，但 Marp 增加了一些内置指令，而且指令分为全局指令和[局部指令](https://marpit.marp.app/directives?id=local-directives-1)，全局指令建议放置于 YAML 区，局部指令位于当前页面，不同页面通过 `---` 切分
 - 推荐阅读：Marpit [官方文档](https://marpit.marp.app)及[中译版](https://caizhiyuan.gitee.io/categories/skills/20200730-marp.html#%E5%8A%9F%E8%83%BD)，五分钟学会 Marp[（上）](https://www.lianxh.cn/news/97fccdca2d7a5.html)、[（下）](https://www.lianxh.cn/news/521900220dd33.html)
-
 
 ## Marp 基本用法
 
@@ -818,7 +797,6 @@ footer: 初虹（山东财经大学） # 设置页脚区域的内容，如果设
 
 - 如果想让页面同时被多个级别的标题切分，比如，以二级~四级标题分割页面，可以 `headingDivider: [2,3,4]` 
 - 想要使得多个自定义样式渲染同一个页面，可直接将不同自定义样式以空格连接，比如：`<!-- _class: cols-2-64 fglass -->`
-
 
 ---
 
