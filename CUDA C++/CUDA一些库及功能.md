@@ -1,4 +1,6 @@
-# CUDA一些库及功能
+---
+title: "CUDA一些库及功能"
+---
 
 ## Thrust
 

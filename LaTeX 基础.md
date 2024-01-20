@@ -1,4 +1,6 @@
-# LaTeX 基础
+---
+title: "LaTeX 基础"
+---
 
 编辑器：VSCode/Texworks
 

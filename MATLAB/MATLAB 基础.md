@@ -1,4 +1,6 @@
-# MATLAB 基础
+---
+title: "MATLAB 基础"
+---
 
 ## 1.常用命令
 

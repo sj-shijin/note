@@ -1,4 +1,6 @@
-# OpenMP指令
+---
+title: "OpenMP指令"
+---
 
 [OpenMPRefCard](OpenMPRefCard.pdf)
 

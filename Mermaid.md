@@ -1,4 +1,6 @@
-# Mermaid
+---
+title: "Mermaid"
+---
 
 [官方文档](https://mermaid.nodejs.cn/syntax/flowchart.html)
 

@@ -1,4 +1,6 @@
-# Nvidia Ada架构
+---
+title: "Nvidia Ada架构"
+---
 
 ## 全芯片结构
 

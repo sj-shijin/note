@@ -1,4 +1,6 @@
-# Linux配置
+---
+title: "Linux配置"
+---
 
 ## Ubuntu配置
 

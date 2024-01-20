@@ -1,4 +1,6 @@
-# VSCode配置
+---
+title: "VSCode配置"
+---
 
 ## Vscode设置
 

@@ -1,4 +1,6 @@
-# JavaScript
+---
+title: "JavaScript"
+---
 
 ## 1.JavaScript的使用
 
