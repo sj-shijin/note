@@ -179,7 +179,7 @@ body {
 
 ## 6.盒子模型
 
-![box](./.CSS.assets/box.jpg)
+![box](./_CSS.assets/box.jpg)
 
 padding：内边距，文字内容到边框的距离
 
