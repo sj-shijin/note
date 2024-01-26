@@ -1,6 +1,6 @@
 {
     "markdown.marp.enableHtml": true,
     "markdown.marp.themes": [
-        "./.Marp.assets/yoimiya.css",
+        "./_Marp.assets/yoimiya.css",
     ]
 }
