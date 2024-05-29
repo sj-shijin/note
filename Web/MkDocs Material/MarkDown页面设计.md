@@ -111,7 +111,7 @@ markdown_extensions:
 [Subscribe to our newsletter][Demo]{ .md-button }
 
   [primary color]: ../setup/changing-the-colors.md#primary-color
-  [accent color]: ../setup/changing-the-colors.md#accent-color 
+  [accent color]: ../setup/changing-the-colors.md#accent-color
   [Demo]: javascript:alert$.next("Demo")
 ```
 
@@ -130,7 +130,7 @@ markdown_extensions:
   - pymdownx.superfences
 ```
 
-代码复制按钮，在代码块中启用[注释](# 注释)：
+代码复制按钮，在代码块中启用注释：
 
 ```yaml
 theme:
@@ -267,7 +267,7 @@ markdown_extensions:
 需要在`mkdocs.yml`中设置：
 
 ```yaml
-markdown_extensions: 
+markdown_extensions:
   - attr_list
   - md_in_html
 ```
@@ -468,7 +468,7 @@ theme:
 
   [链接引用]: https://链接.com "悬停提示"
 
-:material-information-outline:{ title="其他元素使用属性列表添加悬停提示" } 
+:material-information-outline:{ title="其他元素使用属性列表添加悬停提示" }
 ```
 
 缩写和词汇表（[全局设置](https://squidfunk.github.io/mkdocs-material/reference/tooltips/#adding-a-glossary)）：
