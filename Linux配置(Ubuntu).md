@@ -27,29 +27,6 @@ deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe m
 # # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse
 ```
 
-### 终端（fish）
-
-```bash
-sudo apt install fish
-```
-
-方法一：在`~/.bashrc`中添加（不需要迁移原有的脚本）：
-
-```bash
-if [[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]]
-then
-    exec fish
-fi
-```
-
-fish中运行conda：在bash中运行：
-
-```bash
-conda init fish
-```
-
-方法二：迁移脚本到`/etc/fish/config.fish`（所有用户）或`~/.config/fish/config.fish`（当前用户）
-
 ### Git
 
 ```bash
@@ -191,59 +168,3 @@ conda clean --all
 - 视频音频转换（ffmpeg）
 
 - 图像转换（imagemagick）
-
-### 临时访问github（修改hosts）
-
-在`/etc/hosts`中添加：注意ip地址会变，通过解析域名的网站获取。
-
-```text
-199.232.69.194          github.global.ssl.fastly.net
-140.82.113.3            github.com
-185.199.108.154         github.githubassets.com
-```
-
-刷新DNS：
-
-```bash
-sudo systemctl restart systemd-resolved
-```
-
-### WSL2中通过Clash for Windows设置代理
-
-- Clash for Windows客户端设置
-
-  - 修改端口号（默认为7890），以16514为例
-  - 打开Allow LAN
-
-- 修改`~/.bashrc`
-
-  ```bash
-  host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
-  export http_proxy="http://$host_ip:[端口]"
-  export https_proxy="http://$host_ip:[端口]"
-  ```
-
-- 使用root用户保留之前设置的环境变量
-
-  运行`sudo visudo`
-
-  - Ubuntu20.04
-
-    加入该行
-
-    ```text
-    Defaults env_keep="http_proxy https_proxy"
-    ```
-
-  - Ubuntu22.04
-
-    取消该行注释
-
-    ```text
-    Defaults:%sudo env_keep += "http_proxy https_proxy ftp_proxy all_proxy no_proxy"
-    ```
-
-- 测试
-
-  - 输入`source ~/.bashrc`，通过`echo $http_proxy`检查端口号
-  - 输入`wget www.google.com`检查连接。
